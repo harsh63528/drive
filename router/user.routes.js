@@ -34,7 +34,7 @@ router.post('/register',
 
     else{
         const{username,useremail,userpassword}=req.body;
-       const data= await userModule({
+        await userModule({
             name:username,
             email:useremail,
             password:userpassword
