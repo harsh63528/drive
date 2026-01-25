@@ -1,11 +1,19 @@
 import mongoose from 'mongoose';
 
 const userschema= new mongoose.Schema({
-    name:String,
-    email:String,
+    name:{
+        type:String,
+        unique:true,
+        require:true
+    },
+    email:{
+        type:String,
+        unique:true,
+        require:true
+    },
     password:String
 })
 
-const userModule=mongoose.model('kemon',userschema)
+const userModule=mongoose.model('user',userschema)
 
 export default userModule
