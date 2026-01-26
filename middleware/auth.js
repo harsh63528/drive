@@ -5,7 +5,7 @@ const auth= (req,res,next)=>{
     const token=  req.cookies.token;
 
     if(!token){
-        return res.status(401).send('unauthorized')
+        return res.status(401).send('unauthorized access')
     }
     try{
         const verified= jwt.verify(token,process.env.JWT_SECRET);
@@ -13,7 +13,7 @@ const auth= (req,res,next)=>{
         next();
     }
     catch(err){
-        res.status(400).send('invalid token')
+        res.status(401).send('unauthorized access')
     }
 }
 
