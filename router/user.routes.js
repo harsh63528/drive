@@ -3,7 +3,6 @@ import{body,validationResult} from 'express-validator';
 import userModule from "../model/data.js";
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import cookieParser from "cookie-parser";
 
 const router= express.Router()
 
