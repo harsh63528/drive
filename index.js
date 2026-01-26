@@ -6,6 +6,7 @@ import path from 'node:path';
 import UserModel from './model/data.js';
 import connection from './config/config.js';
 import router from './router/user.routes.js';
+import indexRouter from './router/index.routes.js';
 // variables
 const app =express();
 const __dirname= import.meta.dirname;
@@ -16,6 +17,7 @@ const PORT=3000;
     app.use(express.urlencoded({extended:true}))
     app.set('view engine','ejs');
     app.use(express.static(path.join(__dirname,'public')));
+    app.use('/',indexRouter);
     app.use('/user',router)
 
 // rconection
