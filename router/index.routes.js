@@ -16,12 +16,18 @@ router.get('/home',auth,(req,res)=>{
 router.get('/upload',auth,(req,res)=>{
     res.render('upload');
 });
+
+
 router.post("/upload", auth,upload.single("file"), (req, res) => {
   res.json({
     message: "File uploaded successfully",
     file: req.file
   });
 });
+
+router.get('/see',auth,(req,res)=>{
+    res.json({message:'i am working'})
+})
 
 
 
